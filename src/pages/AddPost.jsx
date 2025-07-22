@@ -1,27 +1,21 @@
 // src/pages/AddPost.jsx
 import { useState } from 'react';
-import supabase from '../supabaseClient';
+import PostApi from '../api/PostApi';
+import { useNavigate } from 'react-router-dom';
+
+
 
 export default function AddPost() {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const navigate = useNavigate()
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
+    await PostApi({title, content});
+    navigate("/")
+  }
 
-    const { data, error } = await supabase
-      .from('posts')
-      .insert([{ title, content }]);
-
-    if (error) {
-      console.error('오류 발생:', error.message);
-    } else {
-
-      alert(data, '등록 완료!');
-      setTitle('');
-      setContent('');
-    }
-  };
 
   return (
     <form onSubmit={handleSubmit}>
