@@ -1,7 +1,11 @@
+import AddPost from "./pages/AddPost";
+
+
+
 function App() {
   return (
     <div>
-      hello world
+      <AddPost />
     </div>
   );
 }
