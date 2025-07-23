@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ReadApi from '../api/ReadApi'
 import DeleteApi from '../api/DeleteApi'
+import "./readPost.css"
 
 export default function ReadPost() {
   const [post, setPost] = useState([])
@@ -37,21 +38,35 @@ export default function ReadPost() {
 
   return (
     <div>
-      <Link to="/post">글쓰기</Link>
       {isLoading ? (
         <p>불러오는 중...</p>
       ) : (
-        <ul>
-          {post.map((item) => (
-            <li key={item.id}>
-              <h2>{item.title} - {item.id}</h2>
-              <p>{item.content}</p>
-              <time>{item.created_at}</time>
-              <Link to={`/update/${item.id}`} state={item}>수정</Link>
-              <button onClick={() => {handleDelete(item.id)}}>삭제</button>
-            </li>
-          ))}
-        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>title</th>
+              <th>content</th>
+              <th>수정</th>
+              <th>삭제</th>
+            </tr>
+          </thead>
+          <tbody>
+            {post.map((item) => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.title}</td>
+                <td>{item.content}</td>
+                <td>
+                  <Link to={`/admin/update/${item.id}`} state={item}>수정</Link>
+                </td>
+                <td>
+                  <button onClick={() => {handleDelete(item.id)}}>삭제</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </div>
   )

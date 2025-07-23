@@ -13,7 +13,7 @@ export default function AddPost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await PostApi({title, content});
-    navigate("/")
+    navigate("/admin")
   }
 
 

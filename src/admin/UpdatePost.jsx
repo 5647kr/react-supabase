@@ -26,7 +26,7 @@ export default function UpdatePost() {
   const handleUpdate = (e) => {
     e.preventDefault();
     UpdateApi({title, content, id});
-    navigate("/")
+    navigate("/admin")
   }
 
 
