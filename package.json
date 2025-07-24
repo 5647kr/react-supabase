@@ -6,7 +6,6 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.52.0",
     "cra-template-basic-react": "1.0.1",
-    "gh-pages": "^6.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.7.0",
@@ -39,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
