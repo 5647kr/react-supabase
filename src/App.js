@@ -9,7 +9,7 @@ import UserRead from "./pages/UserRead";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/react-supabase">
       <Routes>
         <Route path="/" element={<UserRead />} />
         
