@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-supabase/static/css/main.e3fa8ae9.css",
+    "main.js": "/react-supabase/static/js/main.27c19bc7.js",
+    "index.html": "/react-supabase/index.html",
+    "main.e3fa8ae9.css.map": "/react-supabase/static/css/main.e3fa8ae9.css.map",
+    "main.27c19bc7.js.map": "/react-supabase/static/js/main.27c19bc7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e3fa8ae9.css",
+    "static/js/main.27c19bc7.js"
+  ]
+}
